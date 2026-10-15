@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Show Development</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101820;color:#f4f5f6;font:16px/1.5 system-ui,sans-serif}.app{max-width:900px;margin:auto;padding:24px}.brand{color:#e8c58a;font-size:13px;font-weight:bold;letter-spacing:2px}h1{font-size:clamp(32px,7vw,54px);line-height:1.1;margin:14px 0}p{color:#bac5ce}.card{background:#192630;border:1px solid #344653;border-radius:16px;padding:20px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.field{margin:16px 0}label{display:block;font-weight:600;margin-bottom:6px}input,select,textarea{width:100%;padding:12px;border-radius:9px;border:1px solid #455662;background:#101820;color:white;font:inherit}textarea{min-height:90px}button{padding:12px 16px;border:0;border-radius:9px;background:#e8c58a;color:#17212a;font-weight:bold;font:inherit;cursor:pointer}small{color:#bac5ce}.pill{display:inline-block;border:1px solid #455662;border-radius:30px;padding:4px 10px;color:#e8c58a;font-size:12px}.stat{font-size:25px;color:#e8c58a}.hidden{display:none}
+</style>
+</head>
+<body><main class="app">
+<div class="brand">✦ SHOW DEVELOPMENT</div>
+<h1>Build a story worth staying for.</h1>
+<p>Your creative workspace for developing projects, characters, story arcs, and continuity.</p>
+<section class="grid">
+<div class="card"><div class="stat">01</div><h3>Project concept</h3><p>Define title, format, genre, tone, setting, and logline.</p></div>
+<div class="card"><div class="stat">02</div><h3>Character development</h3><p>Develop backstories, relationships, careers, and visual details.</p></div>
+<div class="card"><div class="stat">03</div><h3>Continuity & canon</h3><p>Separate established facts, proposed ideas, and unresolved issues.</p></div>
+</section>
+<section class="card"><span class="pill">PHASE I · CONCEPT</span><h2>Start a project</h2>
+<form id="projectForm">
+<div class="grid"><div class="field"><label for="title">Project title</label><input id="title" placeholder="Working title"></div>
+<div class="field"><label for="format">Format</label><select id="format"><option value="">Choose a format</option><option>Television series</option><option>Limited series</option><option>Film</option><option>Novel</option><option>Play</option><option>Audio drama</option><option>Web or interactive project</option><option>Other</option></select></div>
+<div class="field"><label for="genre">Primary genre</label><input id="genre" placeholder="e.g. mystery, comedy"></div>
+<div class="field"><label for="feedback">Feedback style</label><select id="feedback"><option value="">Choose a style</option><option>Honest and Constructive</option><option>Strict Editorial Critique</option><option>Gentle Coaching</option></select></div></div>
+<div class="field"><label for="tone">Tone</label><textarea id="tone" placeholder="Emotional atmosphere, intensity, humor, realism"></textarea></div>
+<div class="field"><label for="setting">Setting</label><textarea id="setting" placeholder="Time period, location, social or environmental context"></textarea></div>
+<div class="field"><label for="logline">Logline</label><textarea id="logline" placeholder="Who is the story about, what do they want, and what stands in their way?"></textarea></div>
+<button type="submit">Save draft on this device</button>
+</form><p id="message" role="status"></p><small>Prototype: this draft is held in this page session only. Permanent project storage and AI scoring are not connected yet.</small>
+</section>
+<footer><small>Show Development · Creative development workspace</small></footer>
+</main>
+<script>
+document.getElementById("projectForm").addEventListener("submit",function(e){e.preventDefault();let title=document.getElementById("title").value.trim()||"Untitled project";document.getElementById("message").textContent="Draft started: "+title+". Next, develop the concept with your Show Development assistant.";});
+</script></body></html>
